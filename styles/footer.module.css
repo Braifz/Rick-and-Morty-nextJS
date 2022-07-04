@@ -1,0 +1,14 @@
+.container {
+  text-align: center;
+  font-size: 1.2rem;
+  position: fixed;
+  margin-bottom: 16px;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.container a {
+  color: #fff;
+  text-decoration: none;
+}
