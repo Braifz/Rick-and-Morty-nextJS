@@ -1,10 +1,13 @@
 .content {
+  background-color: rgb(247, 223, 238);
   display: flex;
+  max-height: 800px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 200px;
-  color: white;
+  padding: 32px;
+  color: #333;
+  box-shadow: 2px 1px 1px rgba(3, 3, 3, 0.3);
 }
 
 .content h1 {
@@ -19,8 +22,18 @@
 }
 
 .content button {
+  border-radius: 16px;
   width: 50%;
+  color: white;
+  background-color: rgb(94, 36, 89);
   margin-top: 16px;
   font-size: 1.4rem;
   padding: 8px 16px;
+}
+
+@media (min-width: 1200px) {
+  .content {
+    border-radius: 0 50% 50% 0;
+    padding: 200px;
+  }
 }
