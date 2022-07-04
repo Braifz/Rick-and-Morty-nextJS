@@ -2,21 +2,31 @@ import Link from "next/link";
 import ThreeScene from "../components/ThreeScene";
 import Box from "../components/Box";
 import { OrbitControls } from "@react-three/drei";
-import { useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { useLoader, Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Layout from "../components/Layout";
 import Camera from "../components/Camera";
 import styles from "../styles/index.module.css";
 import HomeContent from "../components/HomeContent";
-// const Rick = () => {
-//   const { nodes } = useLoader(GLTFLoader, "../public/rick.glb");
+import { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+
+// function Model({ ...props }) {
+//   const group = useRef();
+//   const { nodes, materials } = useGLTF("/scene.gltf");
 //   return (
-//     <mesh receiveShadow castShadow geometry={nodes}>
-//       <meshStandardMaterial attach="material" color="lightblue" />
-//     </mesh>
+//     <group ref={group} {...props} dispose={null}>
+//       <group rotation={[-Math.PI / 2, 0, 0]}>
+//         <mesh
+//           geometry={nodes.Object_2.geometry}
+//           material={materials.material_0}
+//         />
+//       </group>
+//     </group>
 //   );
-// };
+// }
+
+// useGLTF.preload("/scene.gltf");
 
 export default function Home() {
   return (
@@ -31,7 +41,9 @@ export default function Home() {
               <Box />
               <ambientLight />
               <Camera />
-              {/* <Suspense fallback={null}><Rick /></Suspense> */}
+              {/* <Suspense fallback={null}>
+                <Model />
+              </Suspense> */}
               <OrbitControls />
             </ThreeScene>
           </div>
