@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 200px;
+  color: white;
+}
+
+.content h1 {
+  text-align: center;
+  padding-bottom: 32px;
+  font-size: 3rem;
+}
+
+.content p {
+  text-align: center;
+  margin: 32px 16px;
+}
+
+.content button {
+  width: 50%;
+  margin-top: 16px;
+  font-size: 1.4rem;
+  padding: 8px 16px;
+}
