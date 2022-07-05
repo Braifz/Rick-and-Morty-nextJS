@@ -1,0 +1,30 @@
+.characterCard {
+  margin: 16px;
+  background-color: #fff;
+  width: 350px;
+  height: 200px;
+  display: flex;
+  border-radius: 16px;
+}
+
+.characterCard h1 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dataContainer p {
+  padding: 8px;
+}
+
+.image {
+  border-radius: 0px 16px 16px 0;
+}
