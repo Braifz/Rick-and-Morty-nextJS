@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import Character from "../components/Character";
+import Characters from "../components/Characters";
 import styles from "../styles/explore.module.css";
 
 const Hello = ({ data }) => {
@@ -8,9 +9,7 @@ const Hello = ({ data }) => {
     <div className={styles.container}>
       <Layout>
         <h1>Aca se van a buscar los personajes</h1>
-        {data.results.map((e) => (
-          <Character key={e.id} data={e} />
-        ))}
+        <Characters data={data} />
       </Layout>
     </div>
   );
