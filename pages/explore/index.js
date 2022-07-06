@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
-import Character from "../components/Character";
-import Characters from "../components/Characters";
-import styles from "../styles/explore.module.css";
+import Layout from "../../components/Layout";
+import Character from "../../components/Character";
+import Characters from "../../components/Characters";
+import styles from "../../styles/explore.module.css";
 
 const Hello = ({ data }) => {
   console.log(data);
@@ -15,7 +15,7 @@ const Hello = ({ data }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch("https://rickandmortyapi.com/api/character");
   const data = await res.json();
   return { props: { data } };
