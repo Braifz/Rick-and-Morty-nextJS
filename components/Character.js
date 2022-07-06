@@ -1,7 +1,19 @@
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/character.module.css";
 
 const Character = ({ data }) => {
+  const [id, setId] = useState("");
+  useEffect(() => {
+    const id = data.url
+      .split("/")
+      .filter((x) => x)
+      .pop();
+    setId(id);
+  }, []);
+  console.log(id);
+
   return (
     <div className={styles.characterCard}>
       <h1>{data.name}</h1>
