@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-  height: 100vh;
   background-image: url("../public/bg-rick.jpg");
   background-size: cover;
   background-position: center;
@@ -24,6 +23,7 @@
 
 @media (min-width: 1200px) {
   .content {
+    height: 100vh;
     width: 50%;
   }
 
