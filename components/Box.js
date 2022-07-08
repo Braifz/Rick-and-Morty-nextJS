@@ -11,7 +11,13 @@ const Box = (props) => {
   return (
     <mesh ref={mesh} {...props} scale={[1, 1, 1]}>
       <boxBufferGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"#333"} />
+      <meshStandardMaterial
+        attach="material"
+        color="rgb(94, 36, 89)"
+        transparent
+        roughness={0.1}
+        metalness={0.5}
+      />
     </mesh>
   );
 };
