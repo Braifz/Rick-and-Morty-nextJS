@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Character from "./Character";
 import styles from "../styles/characters.module.css";
 
