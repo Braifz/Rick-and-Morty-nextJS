@@ -74,7 +74,7 @@ export default function Home() {
               {/* <Suspense fallback={null}>
                 <Model />
               </Suspense> */}
-              {/* <OrbitControls /> */}
+              <OrbitControls />
             </ThreeScene>
           </div>
         </div>
