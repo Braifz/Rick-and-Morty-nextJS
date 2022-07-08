@@ -6,12 +6,12 @@ import styles from "../../styles/explore.module.css";
 const Hello = ({ data }) => {
   console.log(data);
   return (
-    <div className={styles.container}>
-      <Layout>
+    <Layout>
+      <div className={styles.container}>
         <h1>Aca se van a buscar los personajes</h1>
         <Characters data={data} />
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 };
 
