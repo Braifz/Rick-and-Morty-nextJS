@@ -1,14 +1,12 @@
 .container {
   text-align: center;
   font-size: 1.2rem;
-  position: fixed;
-  margin-bottom: 16px;
+  background-color: rgb(94, 36, 89);
   bottom: 0;
   width: 100%;
-  z-index: 2;
 }
 
 .container a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
 }
