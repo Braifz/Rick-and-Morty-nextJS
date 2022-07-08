@@ -5,7 +5,8 @@
   font-size: 1.5rem;
   padding: 16px;
   height: 100px;
-  position: fixed;
+  background-color: rgb(94, 36, 89);
+
   top: 0;
   width: 100%;
   z-index: 2;
