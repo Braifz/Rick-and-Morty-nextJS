@@ -16,3 +16,18 @@
   padding: 16px;
   color: #fff;
 }
+
+.navIco {
+  filter: invert(1);
+  padding: 32px;
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    display: none;
+  }
+  .navIco {
+    display: block;
+  }
+}
