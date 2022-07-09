@@ -1,14 +1,17 @@
 import Image from "next/image";
-import { useState } from "react";
-import favImg from "../public/images/favourite-svg.svg";
+import { useEffect, useState } from "react";
+import favImg from "../public/images/favorite-star.svg";
 
 const Favourite = ({ id }) => {
   const [favourite, setFavourite] = useState(false);
 
-  const handleFavourite = () => {
-    setFavourite(!favourite);
+  useEffect(() => {
     console.log(id);
     console.log(favourite);
+  }, [favourite]);
+
+  const handleFavourite = () => {
+    setFavourite(!favourite);
   };
 
   return (
@@ -21,15 +24,15 @@ const Favourite = ({ id }) => {
       <style jsx>
         {`
           button {
-            background-color: rgb(94, 36, 89);
             padding: 8px;
             width: 20%;
             border-radius: 8px 0 0 8px;
+            background-color: rgb(23, 88, 107);
           }
 
           .image {
-            filter: invert(1);
-          }
+            ${favourite ? `filter:invert(0)` : `filter: invert(1);`}
+            filter: grayscale(100%);
         `}
       </style>
     </>
