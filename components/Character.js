@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import styles from "../styles/character.module.css";
+
+import Favourite from "./Favourite";
 
 const Character = ({ data }) => {
   const [id, setId] = useState("");
@@ -12,20 +14,20 @@ const Character = ({ data }) => {
       .pop();
     setId(id);
   }, []);
-  console.log(id);
 
   return (
     <div className={styles.characterCard}>
-      <h1>{data.name}</h1>
+      <Favourite id={id} />
       <div className={styles.dataContainer}>
+        <h1>{data.name}</h1>
         <p>status: {data.status}</p>
         <p>specie: {data.species}</p>
       </div>
       <Image
         className={styles.image}
         src={data.image}
-        width={300}
-        height={300}
+        width={200}
+        height={200}
         alt={data.name}
       />
     </div>
