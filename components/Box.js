@@ -13,7 +13,7 @@ const Box = (props) => {
       <boxBufferGeometry args={[1, 1, 1]} />
       <meshStandardMaterial
         attach="material"
-        color="rgb(94, 36, 89)"
+        color="rgb(23, 88, 107)"
         transparent
         roughness={0.1}
         metalness={0.5}
