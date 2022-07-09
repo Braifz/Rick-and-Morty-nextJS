@@ -1,7 +1,10 @@
 .container {
   text-align: center;
   font-size: 1.2rem;
-  background-color: rgb(94, 36, 89);
+  /* background-color: rgb(94, 36, 89);
+   */
+  background-color: rgb(23, 88, 107);
+
   bottom: 0;
   width: 100%;
 }
