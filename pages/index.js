@@ -1,15 +1,16 @@
 import Link from "next/link";
 import ThreeScene from "../components/ThreeScene";
-import Box from "../components/Box";
 import { OrbitControls } from "@react-three/drei";
 import { useLoader, Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import Layout from "../components/Layout";
 import Camera from "../components/Camera";
 import styles from "../styles/index.module.css";
 import HomeContent from "../components/HomeContent";
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+
+const Box = lazy(() => import("../components/Box"));
 
 // function Model({ ...props }) {
 //   const group = useRef();
@@ -27,7 +28,7 @@ import { useGLTF } from "@react-three/drei";
 // }
 
 // useGLTF.preload("/scene.gltf");
-function KeyLight({ brightness, color }) {
+const KeyLight = ({ brightness, color }) => {
   return (
     <rectAreaLight
       width={3}
@@ -40,8 +41,8 @@ function KeyLight({ brightness, color }) {
       castShadow
     />
   );
-}
-function FillLight({ brightness, color }) {
+};
+const FillLight = ({ brightness, color }) => {
   return (
     <rectAreaLight
       width={3}
@@ -54,7 +55,7 @@ function FillLight({ brightness, color }) {
       castShadow
     />
   );
-}
+};
 
 export default function Home() {
   return (
@@ -66,7 +67,9 @@ export default function Home() {
           </div>
           <div className={styles.scene}>
             <ThreeScene>
-              <Box />
+              <Suspense fallback={null}>
+                <Box />
+              </Suspense>
               <ambientLight />
               <Camera />
               <KeyLight brightness={5.6} color={"#fff"} />
