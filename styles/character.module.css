@@ -3,11 +3,12 @@
   width: 350px;
   height: 200px;
   display: flex;
-  border-radius: 32px;
+  border-radius: 8px;
   transition: all 0.3s;
 }
 
 .characterCard:hover {
+  box-shadow: 4px 4px 5px rgba(256, 256, 256, 0.3);
   transform: scale(1.1);
 }
 
@@ -21,7 +22,7 @@
 
 .dataContainer {
   width: 40%;
-  background-color: #fff;
+  background-color: rgb(195, 219, 226);
   display: flex;
   flex-direction: column;
   align-items: center;
