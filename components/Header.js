@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "../styles/header.module.css";
 import NavImg from "../public/nav-ico.png";
+import favImg from "../public/images/favorite-star.svg";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
           <a className={styles.element}>Explore</a>
         </Link>
         <Link className={styles.element} href="/favourites">
-          <a className={styles.element}>Favorites</a>
+          <Image src={favImg} alt="favourite icon" width={30} height={30} />
         </Link>
       </nav>
       <button onClick={toggleNav} className={styles.navIco}>
