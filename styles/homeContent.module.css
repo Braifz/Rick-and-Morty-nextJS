@@ -27,7 +27,7 @@
   border-radius: 16px;
   width: 50%;
   color: white;
-  background-color: rgb(23, 88, 107);
+  background-color: var(--primary-bg-color);
 
   margin-top: 16px;
   font-size: 1.4rem;
