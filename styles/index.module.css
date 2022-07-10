@@ -1,9 +1,8 @@
 .container {
   width: 100%;
-  background-image: url("../public/bg-rick.jpg");
+  background-image: url("../public/bg-home3.png");
   background-size: cover;
   background-position: center;
-  /* background-color: rgb(44, 112, 112); */
 }
 .content {
   width: 100%;
