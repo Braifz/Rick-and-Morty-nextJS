@@ -6,6 +6,10 @@
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+:root {
+  --primary-bg-color: rgb(6, 7, 68);
+}
+
 button,
 input[type="submit"],
 input[type="reset"] {
