@@ -1,11 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Layout from "../../components/Layout";
 import Characters from "../../components/Characters";
 import styles from "../../styles/explore.module.css";
 import SearchCharacter from "../../components/SeachCharacter";
+import { FavoriteContext } from "../../contexts/favorite";
 
 const Explore = ({ data }) => {
   const [page, setPage] = useState(5);
+
+  const addFavorite = useContext(FavoriteContext);
+
+  addFavorite.addFavorite(data);
 
   useEffect(() => {
     console.log(page);
