@@ -8,13 +8,9 @@ import { FavoriteContext } from "../../contexts/favorite";
 const Explore = ({ data }) => {
   const [page, setPage] = useState(5);
 
-  const addFavorite = useContext(FavoriteContext);
-
-  addFavorite.addFavorite(data);
-
   useEffect(() => {
     console.log(page);
-  }, [page]);
+  }, []);
 
   const handleClickPrev = () => {
     if (page === 1) {
