@@ -8,11 +8,15 @@ const { Provider } = FavoriteContext;
 export const FavoriteProvider = ({ children }) => {
   const [state, dispatch] = useReducer(favoriteReducer, initialState);
 
-  const addFavorite = ({ data }) => {
+  const addFavorite = (data) => {
     dispatch({ type: ADD_FAVORITES, payload: data });
   };
 
-  const deleteFavorite = () => {};
+  const deleteFavorite = ({ id }) => {
+    dispatch({ type: DELETE_FAVORITES, payload: id });
+  };
 
-  return <Provider value={{ addFavorite }}>{children}</Provider>;
+  return (
+    <Provider value={{ addFavorite, deleteFavorite }}>{children}</Provider>
+  );
 };
