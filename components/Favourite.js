@@ -1,17 +1,19 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import favImg from "../public/images/favorite-star.svg";
+import { FavoriteContext } from "../contexts/favorite";
 
-const Favourite = ({ id }) => {
+const Favourite = ({ id, data }) => {
   const [favourite, setFavourite] = useState(false);
 
-  useEffect(() => {
-    console.log(id);
-    console.log(favourite);
-  }, [favourite]);
+  const { addFavorite } = useContext(FavoriteContext);
+
+  useEffect(() => {}, []);
 
   const handleFavourite = () => {
+    console.log(id);
     setFavourite(!favourite);
+    addFavorite({ data });
   };
 
   return (
