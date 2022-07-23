@@ -8,7 +8,7 @@ export const favoriteReducer = (state, action) => {
   switch (action.type) {
     case ADD_FAVORITES: {
       return {
-        favorites: [...favorites, action.payload],
+        favorites: [...state.favorites, action.payload],
       };
     }
     case DELETE_FAVORITES: {
