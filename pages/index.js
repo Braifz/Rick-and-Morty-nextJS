@@ -9,7 +9,6 @@ import styles from "../styles/index.module.css";
 import HomeContent from "../components/HomeContent";
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { FavoriteProvider } from "../contexts/favorite";
 
 const Box = lazy(() => import("../components/Box"));
 
@@ -60,31 +59,29 @@ const FillLight = ({ brightness, color }) => {
 
 export default function Home() {
   return (
-    <FavoriteProvider>
-      <div className={styles.container}>
-        <Layout>
-          <div className={styles.wrapper}>
-            <div className={styles.content}>
-              <HomeContent />
-            </div>
-            <div className={styles.scene}>
-              <ThreeScene>
-                <Suspense fallback={null}>
-                  <Box />
-                </Suspense>
-                <ambientLight />
-                <Camera />
-                <KeyLight brightness={5.6} color={"#fff"} />
-                <FillLight brightness={2.6} color={"#fff"} />
-                {/* <Suspense fallback={null}>
+    <div className={styles.container}>
+      <Layout>
+        <div className={styles.wrapper}>
+          <div className={styles.content}>
+            <HomeContent />
+          </div>
+          <div className={styles.scene}>
+            <ThreeScene>
+              <Suspense fallback={null}>
+                <Box />
+              </Suspense>
+              <ambientLight />
+              <Camera />
+              <KeyLight brightness={5.6} color={"#fff"} />
+              <FillLight brightness={2.6} color={"#fff"} />
+              {/* <Suspense fallback={null}>
                 <Model />
               </Suspense> */}
-                <OrbitControls />
-              </ThreeScene>
-            </div>
+              <OrbitControls />
+            </ThreeScene>
           </div>
-        </Layout>
-      </div>
-    </FavoriteProvider>
+        </div>
+      </Layout>
+    </div>
   );
 }
