@@ -17,7 +17,7 @@ const Character = ({ data }) => {
 
   return (
     <div className={styles.characterCard}>
-      <Favourite id={id} />
+      <Favourite data={data} id={id} />
       <div className={styles.dataContainer}>
         <h1>{data.name}</h1>
         <p>status: {data.status}</p>
