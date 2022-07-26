@@ -4,7 +4,7 @@ import styles from "../styles/characters.module.css";
 const Characters = ({ data }) => {
   return (
     <div className={styles.container}>
-      {data.results.map((e) => (
+      {data.map((e) => (
         <Character key={e.id} data={e} />
       ))}
     </div>
