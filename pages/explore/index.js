@@ -28,7 +28,7 @@ const Explore = ({ data }) => {
     <Layout>
       <div className={styles.container}>
         <SearchCharacter />
-        <Characters data={data} />
+        <Characters data={data.results} />
         <div>
           <button onClick={handleClickPrev}>Prev</button>
           <button onClick={handleClickNext}>Next</button>
