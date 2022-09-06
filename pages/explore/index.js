@@ -5,33 +5,39 @@ import styles from "../../styles/explore.module.css";
 import SearchCharacter from "../../components/SeachCharacter";
 import { FavoriteContext } from "../../contexts/favorite";
 
+let page = 1;
+
+const handleClickPrev = (page) => {
+  console.log(page);
+  if (page === 1) {
+    return page;
+  }
+  return page - 1;
+};
+
+const handleClickNext = (page) => {
+  console.log(page);
+  if (page === 42) {
+    return page;
+  }
+  return page + 1;
+};
+
 const Explore = ({ data }) => {
-  const [page, setPage] = useState(5);
+  const [state, setState] = useState(page);
 
   useEffect(() => {
-    console.log(page);
-  }, []);
+    console.log(state);
+  }, [state]);
 
-  const handleClickPrev = () => {
-    if (page === 1) {
-      setPage(page);
-    } else {
-      setPage(page - 1);
-    }
-  };
-
-  const handleClickNext = () => {
-    setPage(page + 1);
-  };
-  console.log(data);
   return (
     <Layout>
       <div className={styles.container}>
         <SearchCharacter />
         <Characters data={data.results} />
         <div>
-          <button onClick={handleClickPrev}>Prev</button>
-          <button onClick={handleClickNext}>Next</button>
+          <button onClick={handleClickPrev(page)}>Prev</button>
+          <button onClick={handleClickNext(page)}>Next</button>
         </div>
       </div>
       <style jsx>
@@ -56,7 +62,7 @@ const Explore = ({ data }) => {
 
 export async function getStaticProps() {
   const res = await fetch(
-    `https://rickandmortyapi.com/api/character?page=${9}`
+    `https://rickandmortyapi.com/api/character?page=${page}`
   );
   const data = await res.json();
   return { props: { data } };
