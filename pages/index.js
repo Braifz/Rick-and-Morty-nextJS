@@ -9,6 +9,7 @@ import styles from "../styles/index.module.css";
 import HomeContent from "../components/HomeContent";
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import Model from "../components/Tree";
 
 const Box = lazy(() => import("../components/Box"));
 
@@ -68,9 +69,10 @@ export default function Home() {
           <div className={styles.scene}>
             <ThreeScene>
               <Suspense fallback={null}>
-                <Box />
+                {/* <Box /> */}
+                <Model />
+                <ambientLight />
               </Suspense>
-              <ambientLight />
               <Camera />
               <KeyLight brightness={5.6} color={"#fff"} />
               <FillLight brightness={2.6} color={"#fff"} />
