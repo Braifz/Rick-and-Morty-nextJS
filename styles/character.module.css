@@ -5,11 +5,13 @@
   display: flex;
   border-radius: 8px;
   transition: all 0.3s;
+  opacity: 0.8;
 }
 
 .characterCard:hover {
   box-shadow: 4px 4px 5px rgba(256, 256, 256, 0.3);
   transform: scale(1.1);
+  opacity: 1;
 }
 
 .characterCard h1 {
