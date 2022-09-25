@@ -53,7 +53,7 @@ export default function Home() {
           <div className={styles.scene}>
             <ThreeScene>
               <Suspense fallback={null}>
-                <Box />
+                {/* <Box /> */}
                 {/* <PickleRick /> */}
                 <ambientLight />
               </Suspense>
