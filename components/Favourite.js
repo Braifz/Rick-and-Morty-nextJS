@@ -26,10 +26,9 @@ const Favourite = ({ id, data }) => {
       <style jsx>
         {`
           button {
-            padding: 8px;
-            width: 20%;
-            border-radius: 8px 0 0 8px;
-            background-color: var(--primary-bg-color);
+            padding: 16px;
+            border-top: 3px solid blue;
+            border-bottom: 3px solid blue;
           }
 
           .image {
