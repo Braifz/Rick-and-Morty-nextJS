@@ -23,7 +23,8 @@ const Header = () => {
           <a className={styles.element}>Explore</a>
         </Link>
         <Link className={styles.element} href="/favourites">
-          <Image src={favImg} alt="favourite icon" width={30} height={30} />
+          {/* <Image src={favImg} alt="favourite icon" width={30} height={30} /> */}
+          <a className={styles.element}> Favorite</a>
         </Link>
       </nav>
       <button onClick={toggleNav} className={styles.navIco}>
