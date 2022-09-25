@@ -8,39 +8,9 @@ import Camera from "../components/Camera";
 import styles from "../styles/index.module.css";
 import HomeContent from "../components/HomeContent";
 import { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-// import { PickleRick } from "../components/PickleRick";
 
-// const Box = lazy(() => import("../components/Box"));
-
-const KeyLight = ({ brightness, color }) => {
-  return (
-    <rectAreaLight
-      width={3}
-      height={3}
-      color={color}
-      intensity={brightness}
-      position={[-2, 0, 5]}
-      lookAt={[0, 0, 0]}
-      penumbra={1}
-      castShadow
-    />
-  );
-};
-const FillLight = ({ brightness, color }) => {
-  return (
-    <rectAreaLight
-      width={3}
-      height={3}
-      intensity={brightness}
-      color={color}
-      position={[2, 1, 4]}
-      lookAt={[0, 0, 0]}
-      penumbra={2}
-      castShadow
-    />
-  );
-};
+const Box = lazy(() => import("../components/Box"));
+const PickleRick = lazy(() => import("../components/PickleRick"));
 
 export default function Home() {
   return (
@@ -54,13 +24,11 @@ export default function Home() {
             <ThreeScene>
               <Suspense fallback={null}>
                 {/* <Box /> */}
-                {/* <PickleRick /> */}
+                <PickleRick />
                 <ambientLight />
+                <Camera />
+                <OrbitControls />
               </Suspense>
-              <Camera />
-              <KeyLight brightness={5.6} color={"#fff"} />
-              <FillLight brightness={2.6} color={"#fff"} />
-              <OrbitControls />
             </ThreeScene>
           </div>
         </div>
