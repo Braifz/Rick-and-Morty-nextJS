@@ -9,7 +9,7 @@ import styles from "../styles/index.module.css";
 import HomeContent from "../components/HomeContent";
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { PickleRick } from "../components/PickleRick";
+// import { PickleRick } from "../components/PickleRick";
 
 // const Box = lazy(() => import("../components/Box"));
 
@@ -53,7 +53,7 @@ export default function Home() {
           <div className={styles.scene}>
             <ThreeScene>
               <Suspense fallback={null}>
-                {/* <Box /> */}
+                <Box />
                 {/* <PickleRick /> */}
                 <ambientLight />
               </Suspense>
