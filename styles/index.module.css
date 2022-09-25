@@ -1,8 +1,9 @@
 .container {
   width: 100%;
-  background-image: url("../public/bg-home3.png");
-  background-size: cover;
-  background-position: center;
+  /* background-image: url("../public/bg-home3.png"); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  background-color: var(--primary-bg-color);
 }
 .content {
   width: 100%;
