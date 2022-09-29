@@ -8,6 +8,7 @@ import Camera from "../components/Camera";
 import styles from "../styles/index.module.css";
 import HomeContent from "../components/HomeContent";
 import { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 
 const Box = lazy(() => import("../components/Box"));
 const PickleRick = lazy(() => import("../components/PickleRick"));
@@ -23,7 +24,6 @@ export default function Home() {
           <div className={styles.scene}>
             <ThreeScene>
               <Suspense fallback={null}>
-                {/* <Box /> */}
                 <PickleRick />
                 <ambientLight />
                 <Camera />
