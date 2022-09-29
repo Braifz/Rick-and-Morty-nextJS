@@ -19,8 +19,8 @@ const Model = (props) => {
 
   const { nodes, materials } = useGLTF("/pickle_rick_-_rick_and_morty.glb");
   return (
-    <group ref={mesh} {...props} dispose={null} args={[1, 1, 1]}>
-      <group rotation={[-Math.PI / 2, 0, 0]} args={[1, 1, 1]}>
+    <group ref={mesh} {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh
           geometry={nodes.Object_2.geometry}
           material={materials.material_0}
