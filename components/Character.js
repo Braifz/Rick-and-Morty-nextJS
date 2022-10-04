@@ -21,12 +21,30 @@ const Character = ({ data }) => {
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ duration: 0.5 }}
-      className={styles.characterCard}
+      className={
+        data.status === "Alive"
+          ? styles.characterCard + " " + styles.characterAlive
+          : styles.characterCard + " " + styles.characterDead
+      }
     >
-      <h1 className={styles.title}>{data.name}</h1>
+      <h1
+        className={
+          data.status === "Alive"
+            ? styles.title + " " + styles.titleAlive
+            : styles.title + " " + styles.titleDead
+        }
+      >
+        {data.name}
+      </h1>
 
       <div className={styles.dataContainer}>
-        <div className={styles.circle}>
+        <div
+          className={
+            data.status === "Alive"
+              ? styles.circle + " " + styles.circleAlive
+              : styles.circle + " " + styles.circleDead
+          }
+        >
           <Image
             className={styles.image}
             src={data.image}
