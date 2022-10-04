@@ -27,10 +27,11 @@ const Favourite = ({ id, data }) => {
         {`
           button {
             padding: 16px;
-            border-top: 3px solid blue;
-            border-bottom: 3px solid blue;
+            border-top: 3px solid ${data.status === "Alive" ? "green" : "red"};
+            border-bottom: 3px solid ${
+              data.status === "Alive" ? "green" : "red"
+            };
           }
-
           .image {
             ${favourite ? `filter:invert(0)` : `filter: invert(1);`}
             filter: grayscale(100%);
