@@ -5,39 +5,51 @@ import styles from "../../styles/explore.module.css";
 import SearchCharacter from "../../components/SeachCharacter";
 import { FavoriteContext } from "../../contexts/favorite";
 
-let page = 1;
-
-const handleClickPrev = (page) => {
-  console.log(page);
-  if (page === 1) {
-    return page;
-  }
-  return page - 1;
-};
-
-const handleClickNext = (page) => {
-  console.log(page);
-  if (page === 42) {
-    return page;
-  }
-  return page + 1;
-};
-
-const Explore = ({ data }) => {
-  const [state, setState] = useState(page);
+const Explore = () => {
+  const [page, setPage] = useState(1);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    console.log(state);
-  }, [state]);
+    fetchData(page);
+  }, [page]);
+
+  const fetchData = async (page) => {
+    try {
+      const res = await fetch(
+        `https://rickandmortyapi.com/api/character?page=${page}`
+      );
+      const data = await res.json();
+      console.log(data);
+      setCharacters(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleClickPrev = () => {
+    console.log(page);
+    if (page === 1) {
+      return page;
+    }
+    setPage(page - 1);
+  };
+
+  const handleClickNext = () => {
+    console.log(page);
+    if (page === 42) {
+      return page;
+    }
+    setPage(page + 1);
+  };
 
   return (
     <Layout>
       <div className={styles.container}>
         <SearchCharacter />
-        <Characters data={data.results} />
+        <Characters data={characters.results} />
         <div>
-          <button onClick={handleClickPrev(page)}>Prev</button>
-          <button onClick={handleClickNext(page)}>Next</button>
+          <button onClick={handleClickPrev}>Prev</button>
+          <button onClick={handleClickNext}>Next</button>
         </div>
       </div>
       <style jsx>
@@ -60,12 +72,12 @@ const Explore = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
-  const res = await fetch(
-    `https://rickandmortyapi.com/api/character?page=${page}`
-  );
-  const data = await res.json();
-  return { props: { data } };
-}
+// export async function getStaticProps() {
+//   const res = await fetch(
+//     `https://rickandmortyapi.com/api/character?page=${page}`
+//   );
+//   const data = await res.json();
+//   return { props: { data } };
+// }
 
 export default Explore;
