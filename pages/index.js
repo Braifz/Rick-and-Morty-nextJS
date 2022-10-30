@@ -24,7 +24,7 @@ export default function Home() {
           <div className={styles.scene}>
             <ThreeScene>
               <Suspense fallback={null}>
-                <PickleRick />
+                <PickleRick position={[40, 30, 10]} />
                 <ambientLight />
                 <Camera />
                 <OrbitControls />
