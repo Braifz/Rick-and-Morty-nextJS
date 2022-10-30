@@ -2,7 +2,7 @@
   text-align: center;
   font-size: 1.2rem;
 
-  background-color: var(--primary-bg-color);
+  background: var(--primary-bg-color);
 
   bottom: 0;
   width: 100%;
