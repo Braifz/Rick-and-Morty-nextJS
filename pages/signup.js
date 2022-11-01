@@ -13,7 +13,12 @@ const signup = () => {
   };
 
   const onSubmit = (values, { resetForm }) => {
-    console.log(values);
+    const { username, password } = values;
+    console.log(values.username, values.password);
+    localStorage.setItem("user", {
+      username,
+      password,
+    });
     resetForm({ values: "" });
   };
 
